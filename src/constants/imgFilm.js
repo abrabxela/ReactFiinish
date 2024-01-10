@@ -1,0 +1,1 @@
+export const DEFAULT_IMAGE_FILM = "https://uploads-ssl.webflow.com/608849d0a34d0572f7bd0a82/61560a436711a9446e869e31_film-roll.jpeg";

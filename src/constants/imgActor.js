@@ -1,0 +1,1 @@
+export const DEFAULT_IMAGE_ACTOR = "https://images.genius.com/77f5794e2eb49f7989b8f85e92cfa4e0.300x300x1.png";
