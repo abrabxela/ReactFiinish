@@ -6,14 +6,13 @@ function SearchActor(filmId) {
   useEffect(() => {
     async function makeRequest() {
       try {
-          const response = await axios.get(
-            ` https://api.tvmaze.com/shows/${filmId}/cast`
-          );
-          setApiActor(response.data);
-        }
-        catch(error) {
-                console.error(error);
-        }
+        const response = await axios.get(
+          ` https://api.tvmaze.com/shows/${filmId}/cast`
+        );
+        setApiActor(response.data);
+      } catch (error) {
+        console.error(error);
+      }
     }
     makeRequest();
   }, [filmId]);

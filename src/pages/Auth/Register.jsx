@@ -7,15 +7,12 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 
-
-
-
 const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const token = useSelector((state) => state.user.accessToken); 
+  const token = useSelector((state) => state.user.accessToken);
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
@@ -45,7 +42,7 @@ const Register = () => {
         style={{ display: "flex", flexDirection: "column", gap: "10px" }}
         onSubmit={handleFormSubmit}
       >
-        <h1 style={{textAlign: "center"}}>Registration</h1>
+        <h1 style={{ textAlign: "center" }}>Registration</h1>
         <TextField
           type="email"
           value={email}
@@ -63,7 +60,16 @@ const Register = () => {
         />
         <Button type="submit">Signed up</Button>
         <Typography>If you have login credential go to </Typography>
-        <Link style={{display: "flex", justifyContent:"center", alignItems:"center"}} to="/auth/login">Login form</Link>
+        <Link
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+          to="/auth/login"
+        >
+          Login form
+        </Link>
       </form>
     </Paper>
   );

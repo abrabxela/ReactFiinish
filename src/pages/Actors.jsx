@@ -11,7 +11,7 @@ export default function Actors() {
   const peoples = SearchPeople().slice(0, 20);
 
   return (
-    <div style={{background:"#141414"}}>
+    <div style={{ background: "#141414" }}>
       <Typography
         sx={{ background: "#141414", color: "#fff", textAlign: "center" }}
       >

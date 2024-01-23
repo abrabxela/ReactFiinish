@@ -4,7 +4,7 @@ import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { DEFAULT_IMAGE_ACTOR } from "../../constants/imgActor";
 
 const buttonStyle = {
@@ -66,9 +66,9 @@ export default function SingleCardPeople(props) {
               </Typography>
             </CardContent>
             <CardActions>
-              <Link to={`/actor/${id}`} style={buttonStyle}>
+              <NavLink to={`/actor/${id}`} style={buttonStyle}>
                 See more
-              </Link>
+              </NavLink>
             </CardActions>
           </Card>
         </CardMedia>

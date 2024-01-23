@@ -5,7 +5,7 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { Box, CardActionArea, Grid } from "@mui/material";
 import { DEFAULT_IMAGE_ACTOR } from "../../constants/imgActor";
-import { Link, useParams } from "react-router-dom";
+import { Link, NavLink, useParams } from "react-router-dom";
 import SearchActor from "../../hooks/SearchActor";
 
 export default function ActorItem() {
@@ -26,7 +26,7 @@ export default function ActorItem() {
 
             return (
               <Grid item xs={12} sm={6}>
-                <Link to={`/Actor/${id}`}>
+                <NavLink to={`/Actor/${id}`}>
                   <Card
                     key={index}
                     sx={{
@@ -52,7 +52,7 @@ export default function ActorItem() {
                       </CardContent>
                     </CardActionArea>
                   </Card>
-                </Link>
+                </NavLink>
               </Grid>
             );
           })}

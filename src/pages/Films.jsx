@@ -3,11 +3,8 @@ import useRequest from "../hooks/UseRequest";
 import SingleCard from "../components/SingleCard/SingleCard";
 import { DEFAULT_IMAGE_FILM } from "../constants/imgFilm";
 
-
-
-
 function Films() {
-    const apiData = useRequest("");
+  const apiData = useRequest("");
   return (
     <>
       <Box

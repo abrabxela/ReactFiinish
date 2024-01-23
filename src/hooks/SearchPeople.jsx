@@ -13,7 +13,7 @@ function SearchPeople() {
       }
     }
     makeRequest();
-  },[]);
+  }, []);
   return apiActor;
 }
 export default SearchPeople;

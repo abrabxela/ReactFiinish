@@ -6,14 +6,13 @@ function SearchEpisodes(Id) {
   useEffect(() => {
     async function makeRequest() {
       try {
-          const response = await axios.get(
-            `https://api.tvmaze.com/seasons/${Id}/episodes`
-          );
-          setApiEpisode(response.data);
-        }
-        catch(error) {
-                console.error(error);
-        }
+        const response = await axios.get(
+          `https://api.tvmaze.com/seasons/${Id}/episodes`
+        );
+        setApiEpisode(response.data);
+      } catch (error) {
+        console.error(error);
+      }
     }
     makeRequest();
   }, [Id]);

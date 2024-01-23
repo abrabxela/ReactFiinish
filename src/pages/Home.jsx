@@ -30,7 +30,6 @@ function Home() {
           style={{ minHeight: "25vh", background: "#141414" }}
           spaceBetween={30}
           slidesPerView={4}
-          
           autoplay={{
             delay: 2500,
             disableOnInteraction: false,

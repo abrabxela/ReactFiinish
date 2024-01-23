@@ -5,7 +5,7 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { DEFAULT_IMAGE_FILM } from "../../constants/imgFilm";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const buttonStyle = {
   textDecoration: "none",
@@ -66,9 +66,9 @@ export default function SingleCard(props) {
               </Typography>
             </CardContent>
             <CardActions>
-              <Link to={`/film/${id}`} style={buttonStyle}>
+              <NavLink to={`/film/${id}`} style={buttonStyle}>
                 show
-              </Link>
+              </NavLink>
             </CardActions>
           </Card>
         </CardMedia>
