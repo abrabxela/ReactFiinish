@@ -19,7 +19,7 @@ const AuthSlice = createSlice({
         state.email = null;
         state.accessToken = null;
         state.uid = null;
-        sessionStorage.setItem("accessToken", '');
+        sessionStorage.clear("accessToken");
     },
     setToken: (state, action) =>{
         state.accessToken = action.payload;

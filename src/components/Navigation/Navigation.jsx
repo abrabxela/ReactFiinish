@@ -7,33 +7,35 @@ import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
-import Avatar from "@mui/material/Avatar";
-import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import logo from "../../constants/logo.png";
-import { NavLink } from "react-router-dom";
+import { NavLink, Navigate, useNavigate } from "react-router-dom";
 import "../../css/Navigation.css";
+import { Button } from "@mui/material";
+import { useDispatch } from "react-redux";
+import { removeUser } from "../../store/AuthSlice";
 
 const pages = ["Home", "Film", "Actor"];
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
+
 
 function Navigation() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
-  };
+  
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
 
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
+  const handleLogout = () => {
+    sessionStorage.clear("accessToken");
+    dispatch(removeUser());
+    navigate("/home");
   };
 
   return (
@@ -139,7 +141,8 @@ function Navigation() {
             </Box>
 
             <Box sx={{ flexGrow: 0 }}>
-              Logout
+              <Button sx={{background:"#191919", color:"#fff"}} onClick={handleLogout}>Logout</Button>
+              
             </Box>
           </Toolbar>
         </Container>
