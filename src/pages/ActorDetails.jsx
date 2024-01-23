@@ -10,9 +10,8 @@ export default function ActorDetails() {
   return (
     <>
       {actorInfo.map((element) => {
-        const { image, name, gender, birthday, country } = { ...element };
-
-        console.log(country);
+        const { image, name: actorName , gender, birthday, country } = { ...element };
+        const {name: coutryName} = {...country};
         return (
           <>
             <Grid
@@ -28,7 +27,7 @@ export default function ActorDetails() {
               </Grid>
               <Grid item sx={8}>
                 <Grid>
-                  <Grid>{name}</Grid>
+                  <Grid>{actorName}</Grid>
                   <Grid>anotation</Grid>
                 </Grid>
                 <Grid>film wis him scroll</Grid>
@@ -37,7 +36,7 @@ export default function ActorDetails() {
                 <Typography variant="h4">personal info</Typography>
                 <Grid item>icons</Grid>
                 <Grid item>Birthday: {birthday}</Grid>
-                <Grid item>Country: </Grid>
+                <Grid item>Country: {coutryName}</Grid>
                 <Grid item>Gender: {gender}</Grid>
               </Grid>
             </Grid>

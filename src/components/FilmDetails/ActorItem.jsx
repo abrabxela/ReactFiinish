@@ -22,21 +22,20 @@ export default function ActorItem() {
         <Grid container spacing={2}>
           {detailsActor.map((element, index) => {
             const { person } = { ...element };
-            const { image, name, id} = { ...person };
+            const { image, name, id } = { ...person };
 
             return (
               <Grid item xs={12} sm={6}>
-                <NavLink to={`/Actor/${id}`}>
+                <NavLink to={`/Actor/${id}`} style={{ textDecoration: "none" }}>
                   <Card
                     key={index}
                     sx={{
-                      
                       marginTop: "30px",
                       marginLeft: "50px",
                       marginBottom: "50px",
                       background: "#191919",
                       color: "#fff",
-                      maxWidth: "400px"
+                      maxWidth: "400px",
                     }}
                   >
                     <CardActionArea sx={{ display: "flex" }}>
@@ -45,8 +44,8 @@ export default function ActorItem() {
                         image={image ? image.medium : DEFAULT_IMAGE_ACTOR}
                         alt="Actor img"
                       />
-                      <CardContent >
-                        <Typography gutterBottom variant="h5" component="div"  >
+                      <CardContent>
+                        <Typography gutterBottom variant="h5" component="div">
                           {name}
                         </Typography>
                       </CardContent>
