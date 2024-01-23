@@ -48,6 +48,7 @@ export default function SingleCard(props) {
               height: "222px",
               zIndex: 1,
               color: "white",
+              borderRadius: 0,
             }}
           >
             <CardContent>
