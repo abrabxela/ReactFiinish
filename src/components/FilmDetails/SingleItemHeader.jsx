@@ -46,8 +46,8 @@ export default function SingleItemHeader() {
                 <Item><Typography textTransform="uppercase" variant="h4">{name}</Typography></Item>
               </Grid>
               <Grid>
-                <Item > 
-                <BasicRating value={average}/>{average}
+                <Item > {average}
+                <BasicRating value={average}/>
                 </Item>
               </Grid>
             </Grid>

@@ -13,10 +13,6 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import SearchEpisodes from "../../hooks/SearchEpisodes";
 
-
-
-
-
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -54,10 +50,11 @@ export default function SingleItemTabs() {
   const storedFilmDetails = sessionStorage.getItem("filmDetails");
   const parsedFilmDetails = JSON.parse(storedFilmDetails);
 
-  const { summary, id} = { ...parsedFilmDetails };
-  
+  const { summary, id } = { ...parsedFilmDetails };
+
   const [value, setValue] = React.useState(0);
-  const series  = SearchEpisodes(id);
+
+  const series = SearchEpisodes(id);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -70,7 +67,7 @@ export default function SingleItemTabs() {
         width: "100%",
         border: "solid",
         borderColor: "#E73F24",
-        background:"#141414"
+        background: "#141414",
       }}
     >
       <Box
@@ -117,9 +114,10 @@ export default function SingleItemTabs() {
         </Tabs>
       </Box>
       <CustomTabPanel value={value} index={0}>
-        <Typography sx={{ color: "white" }}>
-        <div dangerouslySetInnerHTML={{ __html: `${summary}` }} />
-        </Typography>
+        <div
+          style={{ color: "white" }}
+          dangerouslySetInnerHTML={{ __html: `${summary}` }}
+        />
       </CustomTabPanel>
       <CustomTabPanel value={value} index={1}>
         <TableContainer component={Paper} sx={{ backgroundColor: "#191919" }}>
@@ -136,22 +134,27 @@ export default function SingleItemTabs() {
               </TableRow>
             </TableHead>
             <TableBody>
-              {series && series.map((singleSeries, index) => (
-                <TableRow
-                  key={singleSeries.id || index}
-                  sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
-                >
-                  <TableCell component="th" scope="row" sx={{ color: "white" }}>
-                    {singleSeries.name}
-                  </TableCell>
-                  <TableCell align="left" sx={{ color: "white" }}>
-                    {singleSeries.airdate}
-                  </TableCell>
-                  <TableCell align="left" sx={{ color: "white" }}>
-                    {singleSeries.rating.average}
-                  </TableCell>
-                </TableRow>
-              ))}
+              {series &&
+                series.map((singleSeries, index) => (
+                  <TableRow
+                    key={singleSeries.id || index}
+                    sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+                  >
+                    <TableCell
+                      component="th"
+                      scope="row"
+                      sx={{ color: "white" }}
+                    >
+                      {singleSeries.name}
+                    </TableCell>
+                    <TableCell align="left" sx={{ color: "white" }}>
+                      {singleSeries.airdate}
+                    </TableCell>
+                    <TableCell align="left" sx={{ color: "white" }}>
+                      {singleSeries.rating.average}
+                    </TableCell>
+                  </TableRow>
+                ))}
             </TableBody>
           </Table>
         </TableContainer>

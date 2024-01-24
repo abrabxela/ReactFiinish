@@ -4,7 +4,7 @@ import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { DEFAULT_IMAGE_ACTOR } from "../../constants/imgActor";
 
 const buttonStyle = {

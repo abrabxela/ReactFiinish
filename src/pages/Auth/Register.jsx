@@ -22,6 +22,7 @@ const Register = () => {
         const user = userCredential.user;
         dispatch(setToken(user.accessToken));
         dispatch(setUser(user));
+        
       })
       .catch((error) => {
         const errorCode = error.code;
@@ -34,7 +35,7 @@ const Register = () => {
     if (token) {
       navigate("/home");
     }
-  }, token);
+  }, [token, navigate]);
 
   return (
     <Paper sx={{ padding: "50px" }}>

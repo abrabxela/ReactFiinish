@@ -9,7 +9,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import MenuItem from "@mui/material/MenuItem";
 import logo from "../../constants/logo.png";
-import { NavLink, Navigate, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import "../../css/Navigation.css";
 import { Button } from "@mui/material";
 import { useDispatch } from "react-redux";
@@ -27,7 +27,6 @@ function Navigation() {
     setAnchorElNav(event.currentTarget);
   };
   
-
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
