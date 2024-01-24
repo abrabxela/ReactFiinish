@@ -7,6 +7,7 @@ function Films() {
   const apiData = useRequest("");
   return (
     <>
+    
       <Box
         style={{
           minHeight: "400px",
@@ -23,7 +24,7 @@ function Films() {
         <Grid
           container
           spacing={2}
-          sx={{ padding: 10, justifyContent: "center", alignItems: "center" }}
+          sx={{ paddingTop: "120px", paddingLeft:"20px", paddingRight:"20px", justifyContent: "center", alignItems: "center" }}
         >
           {apiData.map(({ show }, index) => (
             <Grid
