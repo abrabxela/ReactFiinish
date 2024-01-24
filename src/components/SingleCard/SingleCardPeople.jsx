@@ -26,7 +26,7 @@ export default function SingleCardPeople(props) {
       <Card>
         <CardMedia
           sx={{
-            width: "345px",
+            width: "300px",
             height: "222px",
             position: "absolute",
             zIndex: 2,
@@ -44,7 +44,7 @@ export default function SingleCardPeople(props) {
               rgba(83, 100, 141, 0.00) 100%
             )`,
               position: "relative",
-              width: "345px",
+              width: "auto",
               height: "222px",
               zIndex: 1,
               color: "white",

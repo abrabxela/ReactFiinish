@@ -94,7 +94,7 @@ function Home() {
         <Grid
           container
           spacing={2}
-          sx={{ padding: 10, justifyContent: "center", alignItems: "center" }}
+          sx={{ display:"flex", justifyContent: "center", alignItems: "center" }}
         >
           {apiData.map(({ show }, index) => (
             <Grid
@@ -104,13 +104,14 @@ function Home() {
               md={4}
               lg={3}
               key={index}
-              sx={{ height: "250px" }}
+              sx={{ height: "250px", display:"flex", justifyContent:"space-between"}}
             >
               <SingleCard
                 id={show.id}
                 name={show.name}
                 time={show.premiered}
                 image={show.image ? show.image.medium : DEFAULT_IMAGE_FILM}
+                
               />
             </Grid>
           ))}

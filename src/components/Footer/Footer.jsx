@@ -23,7 +23,7 @@ export default function Footer() {
       <Grid container spacing={2}>
         <Grid item xs={12} sm={6} md={6}>
           <Grid container spacing={1}>
-            <Grid item xs={12} sm={12} md={12} sx={{ display: "flex" }}>
+            <Grid item xs={12} sm={12} md={12} sx={{ display: "flex", flexWrap: 'wrap' }}>
               <Item>Terms Of Use</Item>
               <Item>Privacy-Policy</Item>
               <Item>FAQ</Item>
